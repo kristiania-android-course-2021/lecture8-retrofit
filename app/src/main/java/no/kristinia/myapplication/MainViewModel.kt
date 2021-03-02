@@ -17,12 +17,15 @@ class MainViewModel : ViewModel() {
     private val _currentComic = MutableLiveData<Comic>()
     val currentComic: LiveData<Comic> get() = _currentComic
 
-    init {
-        loadLatestComic()
+    private val _error = MutableLiveData<Unit>()
+    val error: LiveData<Unit> get() = _error
+
+    private val exceptionHandler = CoroutineExceptionHandler { _, _ ->
+        _error.postValue(Unit)
     }
 
-    val exceptionHandler = CoroutineExceptionHandler { _, _ ->
-        // TODO: Show an error to the user.
+    init {
+        loadLatestComic()
     }
 
     private fun loadLatestComic() {

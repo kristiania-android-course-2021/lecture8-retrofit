@@ -38,6 +38,14 @@ class MainActivity : AppCompatActivity() {
             binding.title.text = comic.title
             Glide.with(this).load(comic.img).into(binding.img)
         }
+
+        viewModel.error.observe(this) {
+            Snackbar.make(
+                binding.root,
+                "Failed to fetch comic. Do you have an internet connection?",
+                Snackbar.LENGTH_LONG
+            ).show()
+        }
     }
 
 }
