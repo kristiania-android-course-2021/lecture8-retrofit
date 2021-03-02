@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(
                 binding.root,
                 "Failed to fetch comic. Do you have an internet connection?",
-                Snackbar.LENGTH_LONG
-            ).show()
+                Snackbar.LENGTH_INDEFINITE
+            ).setAction("Retry") { viewModel.reload() }.show()
         }
     }
 

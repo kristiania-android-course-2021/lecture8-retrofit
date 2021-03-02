@@ -25,6 +25,10 @@ class MainViewModel : ViewModel() {
     }
 
     init {
+        reload()
+    }
+
+    fun reload() {
         loadLatestComic()
     }
 
@@ -45,6 +49,7 @@ class MainViewModel : ViewModel() {
     }
 
     fun loadPreviousComic() {
+        //TODO: Exercise to the reader, what happens if `num` goes below 0?
         currentComic.value?.let { currentComic ->
             loadComic(currentComic.num - 1)
         }
