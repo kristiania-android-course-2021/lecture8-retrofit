@@ -10,7 +10,7 @@
 * Handle the case where we try to load a comic when num goes below zero.
 * Make a prettier UI / Better UX.
 * Add functionality to swipe to the next comic instead of clicking buttons.
-* Cache comics to avoid calling the API too often. For example add the comics to a mutableMap and try to fetch from the map before you fetch from the API.
+* Cache comics to avoid calling the API too often.
 * Preload the next few comics so they show up instantly instead of loading on click.
 
 More difficult:
